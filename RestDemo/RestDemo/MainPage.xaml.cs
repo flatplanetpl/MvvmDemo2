@@ -50,13 +50,9 @@ namespace RestDemo
 
     public class MenuContentPage : ContentPage
     {
-        public MenuViewModel MenuViewModel { get; set; }
-
+     
         protected override void OnAppearing()
         {
-            var menu = this.FindTemplateElementByName<View>("Menu");
-            MenuViewModel = (BindingContext as IMenuPageViewModel).Menu;
-            menu.BindingContext = MenuViewModel;
             base.OnAppearing();
         }
     }
@@ -85,30 +81,4 @@ namespace RestDemo
         public string Url { get; set; }
         public string ThumbnailUrl { get; set; }
     }
-
-
-    public static class Ext
-    {
-        public static T FindTemplateElementByName<T>(this Page page, string name)
-    where T : Element
-        {
-            var pc = page as IPageController;
-            if (pc == null)
-            {
-                return null;
-            }
-
-            foreach (var child in pc.InternalChildren)
-            {
-                var result = child.FindByName<T>(name);
-                if (result != null)
-                {
-                    return result;
-                }
-            }
-
-            return null;
-        }
-    }
-
 }
