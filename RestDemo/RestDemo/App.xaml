@@ -3,8 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RestDemo.App">
   <Application.Resources>
-
-    <!-- Application resource dictionary -->
-
+    <ResourceDictionary>
+      <ControlTemplate x:Key="MenuTemplate">
+        <StackLayout VerticalOptions="CenterAndExpand" Spacing="20" Padding="20" x:Name="Menu">
+          <Label Text="Your Steps" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" />
+          <ContentPresenter />
+        </StackLayout>
+      </ControlTemplate>
+      <!-- Application resource dictionary -->
+    </ResourceDictionary>
   </Application.Resources>
 </Application>

@@ -13,7 +13,7 @@ namespace RestDemo
         {
             InitializeComponent();
 
-            MainPage = new RestDemo.MainPage();
+            MainPage = new RestDemo.MainContentPage();
         }
 
         protected override void OnStart()
